@@ -2,7 +2,7 @@ const { hostname } = require("os");
 const { JSDOM } = require("jsdom");
 
 async function crawlPage(baseURL, currentURL, pages) {
-  console.log(`actively crawling : ${currentURL}`);
+  console.log(`actively crawling: ${currentURL}`);
 
   const baseURLObj = new URL(baseURL);
   const currentURLObj = new URL(currentURL);
@@ -38,7 +38,7 @@ async function crawlPage(baseURL, currentURL, pages) {
       pages = await crawlPage(baseURL, nextURL, pages);
     }
   } catch (err) {
-    console.log(`error in fetch ${err.message} on page ${currentURL}`);
+    console.log(`error in fetch ${err.message} on page: ${currentURL}`);
   }
   return pages;
 }
